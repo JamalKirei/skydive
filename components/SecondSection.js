@@ -1,3 +1,4 @@
+import Image from 'next/image'
 const SecondSection = () => { 
     return (
         <section className="py-5">
@@ -13,7 +14,7 @@ const SecondSection = () => {
                         <div className="my-3" />
                     </div>
                     </div>
-                    <div className="col-md-6 order-first order-md-last" style={{"min-height":"250px"}}><img className="w-100 h-100 fit-cover" src="assets/img/home1_tabs_bg-copyright.png" /></div>
+                    <div className="col-md-6 order-first order-md-last" style={{"min-height":"250px"}}><Image alt="not here"  className="w-100 h-100 fit-cover" src="assets/img/home1_tabs_bg-copyright.png" /></div>
                 </div>
                 </div>
             </div>

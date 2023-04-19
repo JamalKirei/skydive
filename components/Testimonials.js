@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const Testimonials = () => { 
     return (
 <section className="py-5 mt-5">
@@ -13,7 +14,7 @@ const Testimonials = () => {
       <div className="col mb-4">
         <div className="d-flex flex-column align-items-center align-items-sm-start">
           <p className="bg-light border rounded border-light p-4">i came to skyadv centre because i dreamed of solo skydiving</p>
-          <div className="d-flex"><img className="rounded-circle flex-shrink-0 me-3 fit-cover" width={50} height={50} src="assets/img/team/avatar2.jpg" />
+          <div className="d-flex"><Image alt="not here"  className="rounded-circle flex-shrink-0 me-3 fit-cover" width={50} height={50} src="assets/img/team/avatar2.jpg" />
             <div>
               <p className="fw-bold text-primary mb-0">Client</p>
               <p className="text-muted mb-0">Rabat</p>
@@ -24,7 +25,7 @@ const Testimonials = () => {
       <div className="col mb-4">
         <div className="d-flex flex-column align-items-center align-items-sm-start">
           <p className="bg-light border rounded border-light p-4">i have nothing to do with sport and all these extreme activities, but i wanted to understand it.</p>
-          <div className="d-flex"><img className="rounded-circle flex-shrink-0 me-3 fit-cover" width={50} height={50} src="assets/img/image-9-copyright-370x240.jpg" />
+          <div className="d-flex"><Image alt="not here"  className="rounded-circle flex-shrink-0 me-3 fit-cover" width={50} height={50} src="assets/img/image-9-copyright-370x240.jpg" />
             <div>
               <p className="fw-bold text-primary mb-0">Client</p>
               <p className="text-muted mb-0">Merakech</p>
@@ -35,7 +36,7 @@ const Testimonials = () => {
       <div className="col mb-4">
         <div className="d-flex flex-column align-items-center align-items-sm-start">
           <p className="bg-light border rounded border-light p-4">if you want to get the amazing experience of free flight, sky adv is the place where to go</p>
-          <div className="d-flex"><img className="rounded-circle flex-shrink-0 me-3 fit-cover" width={50} height={50} src="assets/img/image-16-copyright-370x240.jpg" />
+          <div className="d-flex"><Image alt="not here"  className="rounded-circle flex-shrink-0 me-3 fit-cover" width={50} height={50} src="assets/img/image-16-copyright-370x240.jpg" />
             <div>
               <p className="fw-bold text-primary mb-0">Client</p>
               <p className="text-muted mb-0">Agadir</p>
