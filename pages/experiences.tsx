@@ -15,7 +15,7 @@ export default function Experiences() {
                 <p className="text-muted">first time jumpers talking about the unique experiences they had</p>
             </div>
             </div>
-            <div className="row row-cols-1 row-cols-md-2 mx-auto" style={{"max-width":"900px"}}>
+            <div className="row row-cols-1 row-cols-md-2 mx-auto" style={{"maxWidth":"900px"}}>
             <div className="col mb-4">
                 <div><a href="#"><Image alt="not here"  className="rounded img-fluid shadow w-100 fit-cover" src="assets/img/image-9-copyright-370x240.jpg" style={{"height":"250px"}} /></a>
                 <div className="py-4"><span className="badge bg-primary mb-2">Mark more</span>

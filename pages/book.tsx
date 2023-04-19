@@ -84,7 +84,7 @@ export default function Book() {
                         </div><label className="form-label" /><label className="form-label" /><select name='ReservationDate' className="form-select" placeholder="HGsOFT">
                         <optgroup label="Choose a date">
                             {
-                                dates.map( date =>(
+                                dates.map( (date: { _id: string, date: string }) =>(
                                     <option value={date._id}>{new Date(date.date).toLocaleDateString()}</option>
                                 )                            
                                 )
