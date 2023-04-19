@@ -4,7 +4,7 @@ const FirstSection = () => {
         <section className="py-5">
         <div className="container py-4 py-xl-5">
             <div className="row row-cols-1 row-cols-md-2">
-            <div className="col"><Image alt="not here"  className="rounded w-100 h-100 fit-cover" style={{"min-height":"300px"}} src="assets/img/image-17-copyright.jpg" /></div>
+            <div className="col"><Image className="rounded w-100 h-100 fit-cover" height={300} width={300} style={{"min-height":"300px"}} src="/assets/img/image-17-copyright.jpg" /></div>
             <div className="col d-flex flex-column justify-content-center p-4">
                 <div className="text-center text-md-start d-flex flex-column align-items-center align-items-md-start mb-5">
                 <div>
