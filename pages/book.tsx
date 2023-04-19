@@ -81,7 +81,7 @@ export default function Book() {
                                   <input type="radio" name="packageID" value="4" className="selectgroup-input" />
                                   <span className="selectgroup-button">Full Flyer Package - 650$</span></label>
                                   </div>
-                        </div><label className="form-label" /><label className="form-label" /><select name='ReservationDate' className="form-select" htmlFor="floatinginput" placeholder="HGsOFT">
+                        </div><label className="form-label" /><label className="form-label" /><select name='ReservationDate' className="form-select" placeholder="HGsOFT">
                         <optgroup label="Choose a date">
                             {
                                 dates.map( date =>(

@@ -77,7 +77,7 @@ export default function Dates() {
             </div>
             <div className="modal-body">
               <div className="form-group">
-                <label htmlFor="newDate">Date:</label>
+                <label>Date:</label>
                 <input type="date" className="form-control" id="newDate" value={newDate} onChange={(e) => setNewDate(e.target.value)} />
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function Dates() {
               </div>
               <div className="modal-body">
                 <div className="form-group">
-                  <label htmlFor="updatedDate">Date:</label>
+                  <label >Date:</label>
                   <input type="date" className="form-control" id="updatedDate" value={editDate.date} onChange={(e) => setEditDate({ ...editDate, date: e.target.value })} />
                 </div>
               </div>
