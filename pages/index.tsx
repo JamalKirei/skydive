@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar';
 import Header from '@/components/Header';
-import FirstSection from '@/components/firstSection'
+import FirstSection from '@/components/FirstSection'
 import SecondSection from '@/components/SecondSection'
 import Packages from '@/components/Packages'
 import Testimonnials from '@/components/Testimonials'
