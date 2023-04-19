@@ -19,7 +19,7 @@ export default function Book() {
     const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
     
-        const formData = new FormData(event.target);
+        const formData = new FormData(event.target as HTMLFormElement);
     
         const payload = {
           PackageID: formData.get("packageID"),
