@@ -26,11 +26,13 @@
     "tailwindcss": "3.3.1",
     "typescript": "5.0.4"
   },
-  "extends": "next",
-  "rules": {
-    "@next/next/no-css-tags": "off",
-    "@next/next/no-sync-scripts": "off",
-    "react/jsx-key": "off",
-    "react/no-unescaped-entities": "off"
+  "eslintConfig": {
+    "extends": "next",
+    "rules": {
+      "@next/next/no-css-tags": "off",
+      "@next/next/no-sync-scripts": "off",
+      "react/jsx-key": "off",
+      "react/no-unescaped-entities": "off"
+    }
   }
 }
