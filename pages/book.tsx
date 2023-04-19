@@ -16,7 +16,7 @@ export default function Book() {
       const data = await response.json();
       setDates(data.data);
     }
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
     
         const formData = new FormData(event.target);
