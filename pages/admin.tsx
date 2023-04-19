@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Users from '@/components/admin/users';
 import Dates from '@/components/admin/dates';
-import Reservations from '@/components/admin/Reservations';
+import Reservations from '@/components/admin/reservations';
 import Packages from '@/components/admin/packages';
 
 export default function Admin() {
