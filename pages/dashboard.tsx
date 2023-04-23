@@ -12,7 +12,7 @@ export default function Admin() {
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
-    const [error, setError] = useState(null);
+    const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
     
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function Admin() {
     const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (!(newPassword == confirmNewPassword)){
-        setError('the new password and confrimation did not match :)');
+        setError("the new password and confrimation did not match :)");
       }else {
       try {
         const response = await fetch('/api/user/update', {
@@ -45,7 +45,7 @@ export default function Admin() {
           setError(data.error || 'Failed to update password:((');
         }
       } catch (error) {
-        setError('Something went wrong :(');
+        setError("Something went wrong :(");
       }}
     };
   return (
