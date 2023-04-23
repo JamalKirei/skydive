@@ -3,8 +3,22 @@ import Users from '@/components/admin/users';
 import Dates from '@/components/admin/dates';
 import Reservations from '@/components/admin/reservations';
 import Packages from '@/components/admin/packages';
+import { useEffect } from 'react';
+import authenticate from '@/lib/auth/authenticate';
+import { useRouter } from 'next/router';
+import unsetuser from '@/lib/auth/unsetuser';
 
 export default function Admin() {
+  const router = useRouter()
+  useEffect(() => {
+    getinfo()
+  }, []);
+  async function getinfo(){
+    const user= await authenticate();
+    if(user.username!=="admin"){
+      router.push('/login')
+    }
+  }
   return (
     <>
       <nav className="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
@@ -31,7 +45,7 @@ export default function Admin() {
                 <Link  className="nav-link" href="#packages">Packages</Link>
                 </li>
                 <li className="nav-item">
-                <Link  className="nav-link" href="/signup">Sign up</Link>
+                  <Link href=""  className="nav-link" onClick={() => (unsetuser() , router.push('/login'))}>Sign out</Link>
                 </li>
             </ul>
             <Link  className="btn btn-primary shadow" role="button" href="/">Home page</Link>

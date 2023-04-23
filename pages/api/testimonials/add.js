@@ -6,16 +6,16 @@ export default async function addTestimonial(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { date } = req.body;
+  const { testimonial } = req.body;
 
   if (!date) {
-    return res.status(400).json({ error: "Missing required parameter: Date" });
+    return res.status(400).json({ error: "Missing required parameter: testimonial" });
   }
 
   const client = await clientPromise;
 
   try {
-    const result = await client.db().collection("dates").insertOne({ date });
+    const result = await client.db().collection("testimonials").insertOne({ date });
     return res.status(200).json({ success: true, data: result.ops[0] });
   } catch (error) {
     console.error(error);

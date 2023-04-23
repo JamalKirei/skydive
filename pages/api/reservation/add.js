@@ -6,6 +6,7 @@ export default async function addReservation(req, res) {
     }
   
     const { PackageID, ReservationDate, ClientName, ClientAge, ClientEmail , ClientPhone , ClientMessage} = req.body;
+    const CreatedAt = new Date();
   
     if (!ReservationDate || !ClientName || !ClientAge || !ClientEmail) {
         console.log("adding..")
@@ -25,6 +26,7 @@ export default async function addReservation(req, res) {
         ClientMessage,
         ReservationStatus: "pending",
         paymentStatus: "not paid",
+        CreatedAt
       });
       return res.status(200).json({ success: true, data: result.ops[0] });
     } catch (error) {

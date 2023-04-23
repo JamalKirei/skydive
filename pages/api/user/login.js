@@ -1,20 +1,22 @@
-import  clientPromise   from "../../../lib/mongodb";
+import clientPromise from "../../../lib/mongodb";
 
-export default async function Login(req, res) {
-    
-  if (req.method === "POST") {
+export default async function login(req, res) {
+  const { username, password } = req.body;
 
+  try {
     const client = await clientPromise;
+    const db = client.db();
 
-    const { username , password } = req.body;
-    try {
-      const result = await client.db().collection("users").find().toArray();
-      res.status(200).json({ success: true, data: result });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ error: "Something went wrong" });
+    const user = await db.collection("users").findOne({ username });
+
+    if (!user || user.password !== password) {
+      res.status(401).json({ message: "Invalid username or password" });
+      return;
     }
-  } else {
-    res.status(405).json({ error: "Method not allowed" });
+
+    return res.status(200).json({ success: true, data: user });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Internal server error" });
   }
 }

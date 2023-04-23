@@ -1,7 +1,7 @@
 import  clientPromise   from "../../../lib/mongodb";
 
 export default async function getAllUsrs(req, res) {
-  if (req.method === "POST") {
+  if (req.method === "GET") {
     const client = await clientPromise;
 
     try {

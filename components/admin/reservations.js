@@ -48,7 +48,7 @@ function Reservations() {
     const data = await response.json();
     if (data.success) {
       const updatedReservations = reservations.map(r => {
-        if (r._id === id) {
+        if (r._id === editedreservation._id) {
           return editedreservation;
         }
         return r;

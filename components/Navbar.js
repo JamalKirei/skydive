@@ -1,6 +1,22 @@
 import Link from 'next/link';
-
+import {useState , useEffect} from 'react';
+import unsetuser from '@/lib/auth/unsetuser';
+import authenticate from '@/lib/auth/authenticate'
+import { useRouter } from 'next/router';
 const Navbar = () => {
+  const router=useRouter();
+  const [user,setUser]=useState();
+  const [dashboard,setdashboard]=useState(true);
+  useEffect(() => {
+    getinfo()
+  }, []);
+  async function getinfo(){
+    const user= await authenticate();
+    if(user!==null){
+      setUser(user)
+      setdashboard(false)
+    }
+  }
   return (
 <nav className="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
   <div className="container">
@@ -30,8 +46,14 @@ const Navbar = () => {
         <li className="nav-item">
           <Link  className="nav-link" href="/contact">Contact</Link>
         </li>
+        {dashboard ? <></> : <li className="nav-item">
+          <Link href="/dashboard"  className="nav-link" >Dashboard</Link>
+        </li>}
+        {!dashboard && user && user.username=="admin" ?<li className="nav-item">
+          <Link href="/admin"  className="nav-link" >admin panel</Link>
+        </li>: <></>}
         <li className="nav-item">
-          <Link  className="nav-link" href="/signup">Sign up</Link>
+          {dashboard ? <Link  className="nav-link" href="/signup">Sign up</Link> : <Link href=""  className="nav-link" onClick={() => (unsetuser() , router.push('/login'))}>Sign out</Link>}
         </li>
       </ul>
       <Link  className="btn btn-primary shadow" role="button" href="/book">Book Now</Link>
