@@ -26,7 +26,7 @@ export default function Admin() {
         router.push('/login')
       }
     }
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (!(newPassword == confirmNewPassword)){
         setError('the new password and confrimation did not match :)');
