@@ -8,7 +8,7 @@ import authenticate from '@/lib/auth/authenticate'
 
 export default function Admin() {
     const router = useRouter();
-    const [user,setUser] = useState({})
+    const [user,setUser] = useState({username:"user"})
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
