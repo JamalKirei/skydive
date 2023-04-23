@@ -10,8 +10,12 @@ export default function Login() {
   const router = useRouter();
   function handleLogin(event:React.FormEvent<HTMLFormElement>) {
       event.preventDefault();
-      const username = event.target.username.value;
-      const password = event.target.password.value;
+      const target = event.target as typeof event.target & {
+        username: { value: string };
+        password: { value: string };
+      };
+      const username = target.username.value;
+      const password = target.password.value;
       const user={
         username,
         password
